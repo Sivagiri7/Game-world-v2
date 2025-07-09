@@ -33,7 +33,7 @@ function Nbar() {
                 <NavDropdown.Item href="#cardthree" className='dropdowns'>Sand-box</NavDropdown.Item>
                 <NavDropdown.Item href="#cardfour" className='dropdowns'>Free to play</NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link id="icon" onClick={() => navigate('/login')}> Log Out</Nav.Link>
+              <Nav.Link id="icon" onClick={() => navigate('/')}> Log Out</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
