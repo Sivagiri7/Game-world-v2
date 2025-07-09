@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  padding: 1rem 5%;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 1rem;
+}
+
+.scroll-card {
+  flex: 0 0 auto;
+  width: 22rem;
+  background-color: #111 !important;
+  border: 1px solid #333;
+  scroll-snap-align: start;
+  border-radius: 10px;
+  transition: transform 0.3s ease, z-index 0.3s;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: #222;
+}
+
+#card,
+#cardtwo,
+#cardthree,
+#cardfour {
+  color: #00a2ffd8;
+  padding-left: 5%;
+  font-size: 2rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+#topgap {
+  margin-top: 5%;
+}
+
+#scroll-card:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .scroll-card {
+    width: 16rem;
+  }
+
+  #card,
+  #cardtwo,
+  #cardthree,
+  #cardfour {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .scroll-container {
+    padding: 1rem 1rem;
+    gap: 1rem;
+  }
+
+  .scroll-card .card-text {
+    font-size: 0.9rem;
+  }
+
+  .scroll-card .card-title {
+    font-size: 1.1rem;
+  }
+}

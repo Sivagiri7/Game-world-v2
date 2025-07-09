@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+  #line {
+  margin: 2rem auto;
+  border-color: #00a2ffd8;
+  width: 80%;
+}
+.form-wrapper {
+  background-color: black;
+  color: white;
+  padding: 3% 8%;
+  font-family: "Orbitron", sans-serif;
+}
+
+.form-title {
+  color: #00a2ffd8;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+}
+
+.custom-form label {
+  color: #00a2ffd8;
+  font-weight: bold;
+}
+
+.custom-form input,
+.custom-form textarea {
+  background-color: #222;
+  color: white;
+  border: 1px solid #555;
+}
+
+.custom-form input::placeholder,
+.custom-form textarea::placeholder {
+  color: gray;
+}
+
+.custom-form button {
+  background-color: #00a2ffd8;
+  border: none;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 5% 5%;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+  }
+}
+
+
+

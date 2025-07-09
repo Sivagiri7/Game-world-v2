@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Orbitron:wght@400..900&display=swap');
+ .main_slice {
+  width: 80%;
+  max-width: 1000px;
+  margin: 4% auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#a {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Headings */
+#slidename {
+  color: #00a2ffd8;
+  padding-left: 10%;
+  padding-top: 2%;
+  font-size: 2.5rem;
+  font-family: "Orbitron", sans-serif;
+  text-align: center;
+}
+
+#slidetext {
+  color: whitesmoke;
+  padding: 0 10%;
+  font-size: 1.2rem;
+ font-family: "Cinzel", serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Button inside carousel */
+#button {
+  text-align: end;
+  padding-right: 5%;
+}
+
+.carousel-caption button {
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 6px 16px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  #slidename {
+    font-size: 1.8rem;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  #slidetext {
+    font-size: 1rem;
+    padding: 0 5%;
+  }
+
+  .main_slice {
+    width: 95%;
+  }
+
+  #button {
+    text-align: center;
+    padding: 0;
+  }
+
+  .carousel-caption button {
+    font-size: 0.9rem;
+    padding: 5px 12px;
+  }
+}

@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
+footer {
+  background-color: black;
+  padding: 3% 5%;
+  color: white;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+#footertitle {
+  color: #00a2ffd8;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: "Orbitron", sans-serif;
+}
+
+#footertext {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem auto;
+  max-width: 900px;
+  color: whitesmoke;
+  font-family: "IM Fell English SC", serif;
+}
+
+#line {
+  margin: 2rem auto;
+  border-color: #00a2ffd8;
+  width: 80%;
+}
+
+#footlink {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #00a2ffd8;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#footlink:hover {
+  text-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke; 
+  cursor: pointer;
+}
+
+#copyright {
+  font-size: 0.85rem;
+  color: gray;
+  text-align: center;
+  padding: 0.3rem 10%;
+  line-height: 1.5;
+}
+
+#first, #second, #third {
+  color: #00a2ffd8;
+  margin: 0 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#first:hover, #second:hover, #third:hover {
+  text-shadow: 0 0 10px whitesmoke, 0 0 20px whitesmoke; 
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #footertitle {
+    font-size: 2rem;
+  }
+
+  #footertext {
+    font-size: 1rem;
+    padding: 0 5%;
+  }
+
+  #footlink {
+    font-size: 1rem;
+  }
+
+  #copyright {
+    font-size: 0.75rem;
+    padding: 0.5rem 5%;
+  }
+
+  #first, #second, #third {
+    display: block;
+    margin: 5px 0;
+  }
+}

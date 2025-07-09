@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+.navbar {
+  min-height: 100px;
+  color: rgb(56, 56, 56);
+}
+
+#nav {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+#nav .nav-link,
+#title {
+  color: #00a2ffd8 !important;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Audiowide", sans-serif;
+  transition: 0.3s ease-in-out;
+}
+
+#nav .nav-link:hover {
+  text-shadow: 0 0 10px #00a2ffd8, 0 0 20px #00a2ffd8;
+  font-size: 23px;
+}
+
+#title {
+  font-size: 35px;
+  font-family: "Audiowide", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#dropdown {
+  background-color: black;
+  font-family: "Audiowide", sans-serif;
+
+}
+
+#icon {
+  size: 100%;
+}
+
+.dropdowns {
+  color: #00a2ffd8 !important;
+  font-family: "Audiowide", sans-serif;
+  font-size: 18px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #title {
+    font-size: 28px;
+  }
+
+  #nav .nav-link {
+    font-size: 18px;
+  }
+
+  .dropdowns {
+    font-size: 16px;
+  }
+
+  .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+}
