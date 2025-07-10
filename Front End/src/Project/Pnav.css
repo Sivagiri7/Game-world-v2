@@ -52,7 +52,6 @@
   font-size: 18px;
 }
 
-/* Responsive tweaks */
 @media (max-width: 768px) {
   #title {
     font-size: 28px;
