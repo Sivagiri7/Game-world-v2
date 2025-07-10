@@ -639,3 +639,4 @@
 2025-07-10 20:18:55,419 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory E:\Gameworld Backend\form\src\test\resources
 2025-07-10 20:19:17,862 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
 2025-07-10 20:42:38,406 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-07-10 21:53:38,636 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
