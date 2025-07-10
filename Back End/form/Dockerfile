@@ -1,14 +1,24 @@
-# Use a lightweight OpenJDK 17 image
-FROM openjdk:17-jdk-slim
+# --- Step 1: Build the project using Maven ---
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy all project files into the container
+# Copy the entire project
 COPY . .
 
-# Build the Spring Boot project and skip tests
-RUN java -jar .mvn/wrapper/maven-wrapper.jar clean install -DskipTests
+# Build the JAR, skip tests
+RUN mvn clean install -DskipTests
 
-# Run the generated .jar file (replace with your actual .jar name if needed)
-CMD ["java", "-jar", "target/form-0.0.1-SNAPSHOT.jar"]
+# --- Step 2: Run the app using Java only ---
+FROM eclipse-temurin:17-jdk
+
+# Set working directory
+WORKDIR /app
+
+# Copy the built JAR from the previous stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Start the Spring Boot app
+CMD ["java", "-jar", "app.jar"]
+
