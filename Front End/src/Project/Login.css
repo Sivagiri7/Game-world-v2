@@ -1,17 +1,18 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
 .login-register-wrapper {
   width: 90%;
   max-width: 1000px;
-  height: 560px;
+  height: auto;
   margin: 60px auto;
   perspective: 1200px;
-  
 }
 
 .flip-box {
   width: 100%;
-  height: 100%;
+  min-height: 560px;
   transition: 0.8s;
   transform-style: preserve-3d;
   position: relative;
@@ -29,14 +30,17 @@
   border: 2px solid #00a2ffd8;
   border-radius: 10px;
   overflow: hidden;
-  background:#1f1f1f;
+  background: #1f1f1f;
   box-shadow: 0 0 20px #00a2ffd8;
   backface-visibility: hidden;
+  flex-direction: row;
 }
 
 .flip-side img {
   flex: 1;
   object-fit: cover;
+  width: 50%;
+  height: auto;
 }
 
 .form-side {
@@ -52,6 +56,7 @@
   margin-bottom: 20px;
   color: white;
   font-family: "Audiowide", sans-serif;
+  text-align: center;
 }
 
 #log {
@@ -80,7 +85,7 @@
   font-family: "Orbitron", sans-serif;
 }
 
-#logtext{
+#logtext {
   text-align: center;
   margin-top: 20px;
   font-size: 0.95rem;
@@ -88,7 +93,7 @@
   font-family: "Orbitron", sans-serif;
 }
 
-#logtext_two{
+#logtext_two {
   color: #00a2ffd8;
   text-decoration: underline;
   cursor: pointer;
@@ -97,4 +102,54 @@
 
 .back-side {
   transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 768px) {
+  .flip-box {
+    transform: none !important;
+  }
+
+  .flip-side {
+    position: relative;
+    transform: none !important;
+    backface-visibility: visible;
+    display: none;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .flip-box.flipped .back-side,
+  .flip-box:not(.flipped) .front-side {
+    display: flex;
+  }
+
+  .flip-side img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .form-side {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #log_button {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #log {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .form-side h2 {
+    font-size: 1.2rem;
+  }
+
+  #logtext {
+    font-size: 0.9rem;
+  }
 }
