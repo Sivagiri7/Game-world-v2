@@ -50,8 +50,6 @@
   transform: scale(1.05);
   z-index: 10;
 }
-
-/* Responsive Tweaks */
 @media (max-width: 768px) {
   .scroll-card {
     width: 16rem;
