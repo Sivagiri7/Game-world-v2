@@ -1,0 +1,47 @@
+package com.example.form;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@CrossOrigin(origins = "http://localhost:3000") 
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @Autowired
+    private UserRepository userRepo;
+
+    @PostMapping("/register")
+    public String register(@RequestBody User user) {
+        User exist = userRepo.findByEmail(user.getEmail());
+        if (exist != null) return "Email already registered";
+
+        userRepo.save(user);
+        return "Registered";
+    }
+
+    @PostMapping("/login")
+    public User login(@RequestBody User request) {
+        User user = userRepo.findByEmail(request.getEmail());
+        if (user == null) return null;
+
+        if (user.getPassword().equals(request.getPassword())) {
+            return user;
+        }
+        return null;
+    }
+
+    @GetMapping("/users")
+    public List<User> getAll() {
+        return userRepo.findAll();
+    }
+
+    @DeleteMapping("/users/{id}")
+    public String delete(@PathVariable Long id) {
+        userRepo.deleteById(id);
+        return "User deleted";
+    }
+}

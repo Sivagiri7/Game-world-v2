@@ -1,0 +1,38 @@
+package com.example.form.form_services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import com.example.form.controller.Inquiry;
+import com.example.form.repository.InquiryRepository;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/inquiries")
+@CrossOrigin(origins = "*")
+public class InquiryController {
+
+    @Autowired
+    private InquiryRepository repo;
+
+    @GetMapping
+    public List<Inquiry> getAll() {
+        return repo.findAll();
+    }
+
+    @PostMapping
+    public Inquiry create(@RequestBody Inquiry inquiry) {
+        return repo.save(inquiry);
+    }
+
+    @PutMapping("/{id}")
+    public Inquiry update(@PathVariable int id, @RequestBody Inquiry inquiry) {
+        inquiry.setId(id);
+        return repo.save(inquiry);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id) {
+        repo.deleteById(id);
+    }
+}
