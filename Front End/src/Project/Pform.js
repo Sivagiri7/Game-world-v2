@@ -15,7 +15,7 @@ function Pform() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch('http://localhost:9090/api/inquiries', {
+      await fetch('https://game-world-v2-w7e4.onrender.com/api/inquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

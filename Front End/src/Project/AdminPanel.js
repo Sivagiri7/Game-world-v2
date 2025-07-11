@@ -6,39 +6,37 @@ function AdminPanel() {
    const [inquiries, setInquiries] = useState([]);
    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
    const [editingIndex, setEditingIndex] = useState(null);
-   const [users, setUsers] = useState([]); // ✅ new for users
+   const [users, setUsers] = useState([]); 
 
-   // 🔁 Load data from backend
    useEffect(() => {
     const fetchData = async () => {
        try {
-         const inquiryRes = await axios.get("http://localhost:9090/api/inquiries");
+         const inquiryRes = await axios.get("https://game-world-v2-w7e4.onrender.com/api/inquiries");
          setInquiries(inquiryRes.data);
 
-         const userRes = await axios.get("http://localhost:9090/api/auth/users");
+         const userRes = await axios.get("https://game-world-v2-w7e4.onrender.com/api/auth/users");
          setUsers(userRes.data);
        } catch (err) {
-         console.log("❌ Error fetching data:", err);
+         console.log(" Error fetching data:", err);
        }
      };
 
      fetchData();
   }, []);
 
-   // 📝 Handle input changes
+   
    const handleChange = (e) => {
      const { name, value } = e.target;
      setFormData({ ...formData, [name]: value });
    };
 
-   // ✏ Only allow updates
    const handleSubmit = async (e) => {
      e.preventDefault();
 
      try {
        if (editingIndex !== null) {
        const id = inquiries[editingIndex].id;
-         const res = await axios.put(`http://localhost:9090/api/inquiries/${id}`, formData);
+         const res = await axios.put(`https://game-world-v2-w7e4.onrender.com/api/inquiries/${id}`, formData);
          const updated = [...inquiries];
          updated[editingIndex] = res.data;
          setInquiries(updated);
@@ -52,17 +50,16 @@ function AdminPanel() {
     }
    };
 
-   // ✏ Edit
+   
    const handleEdit = (index) => {
      setFormData(inquiries[index]);
      setEditingIndex(index);
    };
 
-   // ❌ Delete Inquiry
    const handleDelete = async (index) => {
      const id = inquiries[index].id;
      try {
-       await axios.delete(`http://localhost:9090/api/inquiries/${id}`);
+       await axios.delete(`https://game-world-v2-w7e4.onrender.com/api/inquiries/${id}`);
        const filtered = inquiries.filter((_, i) => i !== index);
        setInquiries(filtered);
      } catch (err) {
@@ -70,10 +67,10 @@ function AdminPanel() {
      }
    };
 
-   // ❌ Delete User
+   
    const handleDeleteUser = async (id) => {
      try {
-       await axios.delete(`http://localhost:9090/api/auth/users/${id}`);
+       await axios.delete(`https://game-world-v2-w7e4.onrender.com/api/auth/users/${id}`);
        setUsers(users.filter(user => user.id !== id));
      } catch (err) {
        console.error("Delete user error:", err);
