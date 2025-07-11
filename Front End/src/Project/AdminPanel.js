@@ -12,10 +12,10 @@ function AdminPanel() {
    useEffect(() => {
     const fetchData = async () => {
        try {
-         const inquiryRes = await axios.get("http://localhost:9090/api/inquiries");
+         const inquiryRes = await axios.get("https://game-world-v2-w7e4.onrender.com/api/inquiries");
          setInquiries(inquiryRes.data);
 
-         const userRes = await axios.get("http://localhost:9090/api/auth/users");
+         const userRes = await axios.get("https://game-world-v2-w7e4.onrender.com/api/auth/users");
          setUsers(userRes.data);
        } catch (err) {
          console.log(" Error fetching data:", err);
