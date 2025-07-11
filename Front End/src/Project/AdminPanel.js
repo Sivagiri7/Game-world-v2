@@ -37,7 +37,7 @@ function AdminPanel() {
      try {
        if (editingIndex !== null) {
        const id = inquiries[editingIndex].id;
-         const res = await axios.put(`http://localhost:9090/api/inquiries/${id}`, formData);
+         const res = await axios.put(`https://game-world-v2-w7e4.onrender.com/api/inquiries/${id}`, formData);
          const updated = [...inquiries];
          updated[editingIndex] = res.data;
          setInquiries(updated);
