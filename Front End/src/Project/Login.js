@@ -28,7 +28,7 @@ function Login() {
       const data = await res.json();
 
       if (!data || !data.role) {
-        alert("Login failed.Check Your Emai or Password");
+        alert("Login failed.Check Your Email or Password");
         return;
       }
 
