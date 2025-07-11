@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/inquiries")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://gameworld-v2.netlify.app/")
 public class InquiryController {
 
     @Autowired

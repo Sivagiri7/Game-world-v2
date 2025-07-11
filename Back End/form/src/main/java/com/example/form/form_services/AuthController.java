@@ -9,7 +9,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://gameworld-v2.netlify.app/")
 public class AuthController {
 
     @Autowired
